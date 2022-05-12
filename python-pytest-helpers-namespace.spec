@@ -1,7 +1,7 @@
 %global _empty_manifest_terminate_build 0
 Name:		python-pytest-helpers-namespace
 Version:	2021.4.29
-Release:	1
+Release:	2
 Summary:	Pytest Helpers Namespace Plugin
 License:	Apache Software License 2.0
 URL:		https://github.com/saltstack/pytest-helpers-namespace
@@ -24,7 +24,9 @@ BuildRequires:	python3-devel
 BuildRequires:	python3-setuptools
 BuildRequires:	python3-pip
 BuildRequires:	python3-wheel
-
+BuildRequires:  python3-setuptools-declarative-requirements
+BuildRequires:  python3-setuptools_scm
+BuildRequires:  python3-toml
 %description
 This plugin does not provide any helpers to pytest, it does, however, provide a helpers namespace in pytest 
 which enables you to register helper functions in your conftest.py to be used within your tests 
@@ -67,5 +69,8 @@ mv %{buildroot}/filelist.lst .
 %{_docdir}/*
 
 %changelog
+* Wed May 18 2022 lvxiaoqian <xiaoqian@nj.iscas.ac.cn>
+- add necessary BuildRequires
+
 * Tue Jun 29 2021 Python_Bot <Python_Bot@openeuler.org> - 2021.4.29-1
 - Package Spec generated
